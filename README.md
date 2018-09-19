@@ -2,6 +2,8 @@
 
 Trying out a different architecture for [mapbox/secret-shield](https://github.com/mapbox/secret-shield)
 
+[![Build Status](https://travis-ci.com/agius/secret-shield-refactor-draft.svg?branch=master)](https://travis-ci.com/agius/secret-shield-refactor-draft)
+
 ## Development
 
 ```shell
