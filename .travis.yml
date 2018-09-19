@@ -1,0 +1,8 @@
+language: node_js
+sudo: false
+# nodeJS versions compatible with AWS Lambda
+# https://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html
+node_js:
+  - 4.3.2
+  - 6.12.3
+  - 8.10

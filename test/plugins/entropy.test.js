@@ -5,6 +5,7 @@ const tape = require('tape');
 const Shield = require('../../index');
 const LongEntropy = require('../../plugins/long-entropy');
 const ShortEntropy = require('../../plugins/short-entropy');
+const testutils = require('../testutils');
 
 const highStr = '5k8anhaaf6d80cnc81cokm71mcbd0jc8oi4l9o79aj6ci68aemlca8lhjs9qpworuyazmxnvb109284726478465pqowieurytlaksjdhfgzmxncbcv01928374756lskfhskdj2763986bdhjvbljalsjhcbjhbiwuqtuofbpabsa9876769';
 
@@ -25,7 +26,7 @@ tape('[long-entropy] long high-entropy string', (t) => {
   const shield = new Shield();
   shield.addPlugin(LongEntropy);
 
-  const lowEntString = Buffer.alloc(50, 'a');
+  const lowEntString = testutils.mkstr(50, 'a');
   const findings = shield.processString('lhe token is a token that is here: ' + lowEntString);
 
   t.equal(findings.length, 0, 'no problemo');
@@ -47,7 +48,7 @@ tape('[long-entropy] long high-entropy string', (t) => {
   const shield = new Shield();
   shield.addPlugin(LongEntropy);
 
-  const lowEntString = Buffer.alloc(22, 'a');
+  const lowEntString = testutils.mkstr(22, 'a');
   const findings = shield.processString('lhe token is a token that is here: ' + lowEntString);
 
   t.equal(findings.length, 0, 'no problemo');

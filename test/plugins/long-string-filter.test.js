@@ -5,8 +5,9 @@ const tape = require('tape');
 const Shield = require('../../index');
 const Finding = require('../../lib/finding');
 const LSF = require('../../plugins/long-string-filter');
+const testutils = require('../testutils');
 
-const longlong = Buffer.alloc(2001, 'a').toString();
+const longlong = testutils.mkstr(2001, 'a');
 const longFinder = {
   processString: function(input) {
     if(input.length > 0) return new Finding({

@@ -4,6 +4,7 @@ const tape = require('tape');
 
 const Shield = require('../../index');
 const AWSPlugin = require('../../plugins/aws');
+const testutils = require('../testutils');
 
 const finder = {
   processString: function(input) {
@@ -44,7 +45,7 @@ tape('[aws-plugin] ignores low-entropy private key matches', (t) => {
   });
   shield.addPlugin(plug);
 
-  const lowEntKey = Buffer.alloc(20, 'a').toString() + Buffer.alloc(20, 'b').toString();
+  const lowEntKey = testutils.mkstr(20, 'a') + testutils.mkstr(20, 'b');
   const findings = shield.processString('aws secret: ' + lowEntKey);
 
   t.equal(findings.length, 0, '[aws-plugin] found no secret keys');
@@ -59,7 +60,7 @@ tape('[aws-plugin] private keys with custom entropy', (t) => {
   });
   shield.addPlugin(plug);
 
-  const lowEntKey = Buffer.alloc(20, 'a').toString() + Buffer.alloc(20, 'b').toString();
+  const lowEntKey = testutils.mkstr(20, 'a') + testutils.mkstr(20, 'b');
   const findings = shield.processString('aws secret: ' + lowEntKey);
 
   t.equal(findings.length, 1, '[aws-plugin] found a secret key');
