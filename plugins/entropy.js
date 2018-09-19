@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 const Finding = require('../lib/finding');
-const entropic = require('../lib/entropic');
+const helpers = require('../lib/helpers');
 
 const thresholdPath = path.resolve(__dirname, 'entropy', 'thresholds.json');
 const thresholds = JSON.parse(fs.readFileSync(thresholdPath).toString());
@@ -56,7 +56,7 @@ EntropyPlugin.prototype.matchType = function matchType(input) {
 EntropyPlugin.prototype.checkCandidate = function checkCandidate(candidate) {
   const kind = this.matchType(candidate);
   const thresh = this.threshold(kind, candidate.length);
-  const ent = entropic.entropy(candidate);
+  const ent = helpers.entropy(candidate);
 
   return ent >= thresh;
 };

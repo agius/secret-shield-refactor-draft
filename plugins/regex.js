@@ -1,6 +1,6 @@
 'use strict';
 
-const entropic = require('../lib/entropic');
+const helpers = require('../lib/helpers');
 const Finding = require('../lib/finding');
 
 function RegexPlugin(options) {
@@ -13,7 +13,7 @@ RegexPlugin.prototype.processString = function processString(input) {
   const match = input.toString().match(this.pattern);
   if(match === null || match.length <= 0) return;
 
-  if(this.minEntropy && entropic.entropy(match[1]) < this.minEntropy) return;
+  if(this.minEntropy && helpers.entropy(match[1]) < this.minEntropy) return;
 
   return new Finding({
     ruleName: this.ruleName,
