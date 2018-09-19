@@ -7,7 +7,7 @@
     "test": "eslint **/*.js && tape test/**/*.js"
   },
   "author": "andrew.evans@mapbox.com",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^5.6.0",
     "tape": "^4.9.1"
