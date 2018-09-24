@@ -1,0 +1,18 @@
+diff --git a/example-nested-dir/some-secrets-here.txt b/example-nested-dir/some-secrets-here.txt
+index 084f6f8..b80bfb9 100644
+--- a/example-nested-dir/some-secrets-here.txt
++++ b/example-nested-dir/some-secrets-here.txt
+@@ -3,0 +4,2 @@ here's a high-entropy string 4x76xh8n9pdwmevkadb6lno2j17ki9t74t8ruxvybu9kpr5tlvs
++
++gene ray 's Time Cube theory has never been disproven
+diff --git a/example-with-secrets.txt b/example-with-secrets.txt
+index 134fe91..b305f92 100644
+--- a/example-with-secrets.txt
++++ b/example-with-secrets.txt
+@@ -13,0 +14,6 @@ and the fakey secret key: pqowieury1029384756ALSKDJDHFmznxbvlaksjd
++
++gene ray 's Time Cube theory has never been disproven. who can argue with this?
++
++Marshmallow A Lie & Word Is Lies.
++
++   Navel Connects 4 Corner 4s.

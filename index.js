@@ -95,6 +95,9 @@ Shield.prototype.processRemoteRepo = function processRemoteRepo(gitpath) {
     return helpers.execAsync('git clone ' + gitpath + ' ' + tdname);
   }).then(() => {
     return this.processDirectory(tdname);
+  }).then((findings) => {
+    helpers.rmrfSync(tdname);
+    return findings;
   });
 };
 
@@ -117,7 +120,7 @@ Shield.prototype.processDiff = function processDiff(content) {
     }
 
     const fileFindings = this.processString(line);
-    for(const finding in fileFindings) {
+    for(const finding of fileFindings) {
       finding.setFile(curFile);
       finding.setLine(lineNo);
       findings.push(finding);

@@ -4,7 +4,7 @@
   "description": "A draft refactor of mapbox/secret-shield",
   "main": "index.js",
   "scripts": {
-    "test": "eslint **/*.js && tape test/**/*.js"
+    "test": "eslint **/*.js && tape test/**/*.test.js test/*.test.js"
   },
   "author": "andrew.evans@mapbox.com",
   "license": "MIT",
