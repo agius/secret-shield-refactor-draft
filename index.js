@@ -6,6 +6,7 @@ const readline = require('readline');
 
 const helpers = require('./lib/helpers');
 const Finding = require('./lib/finding');
+const CLI = require('./lib/cli');
 
 function Shield(config) {
   this.config = config || {};
@@ -130,5 +131,6 @@ Shield.prototype.processDiff = function processDiff(content) {
 };
 
 Shield.Finding = Finding;
+Shield.CLI = CLI;
 
 module.exports = Shield;
